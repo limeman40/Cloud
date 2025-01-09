@@ -11,3 +11,8 @@ This section showcases cloud-based projects using Infrastructure as Code (IaC), 
 2. **CI/CD Pipeline Setup**
 3. **CI/CD Pipeline Setup**
 
+📧 Contact
+For questions or feedback, feel free to reach out:
+
+Email: nicholas.a.clark@outlook.com
+LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/nicholas-a-clark/)

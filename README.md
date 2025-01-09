@@ -15,4 +15,4 @@ This section showcases cloud-based projects using Infrastructure as Code (IaC), 
 For questions or feedback, feel free to reach out:
 
 Email: nicholas.a.clark@outlook.com
-LinkedIn: [Your LinkedIn Profile](https://www.linkedin.com/in/nicholas-a-clark/)
+LinkedIn: [Nicholas Clark](https://www.linkedin.com/in/nicholas-a-clark/)

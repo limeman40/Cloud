@@ -112,22 +112,18 @@ Use the following commands to run tests for the application:
 
 * Backend Tests:
 `pytest tests/test_app.py`
-
 * Frontend Tests:
 `npm test tests/testui.js`
 
 # 5. Deploy to Kubernetes
 Ensure you have a Kubernetes cluster and kubectl configured. Then, apply the Kubernetes manifests in the infrastructure/k8s/ directory:
-
 `kubectl apply -f infrastructure/k8s/`
 
 Verify the deployment:
+`kubectl get pods`
+`kubectl get services`
 
-bash
-Copy code
-kubectl get pods
-kubectl get services
-6. Monitor Logs and Status
+#6. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.
 
 For Kubernetes logs:
@@ -138,56 +134,47 @@ For Docker logs (local testing):
 
 7. Stop Local Containers
 To stop and clean up the Docker containers running locally:
-
 `docker-compose down`
 
 ## 🔄 Workflows
-1. Continuous Integration (CI)
-File: .github/workflows/ci.yml
+# 1. Continuous Integration (CI)
+*File: .github/workflows/ci.yml
+*Triggers: Every push or pull request.
+*Steps:
+1. Check out the repository.
+2. Run backend and frontend tests.
+3. Perform linting for code quality.
 
-Triggers: Every push or pull request.
-
-Steps:
-Check out the repository.
-Run backend and frontend tests.
-
-Perform linting for code quality.
 # 2. Continuous Deployment (CD)
 
-File: .github/workflows/cd.yml
-Triggers: Merge to the main branch.
-
-Steps:
-Build Docker images for backend and frontend.
-Push Docker images to Docker Hub.
-
-Deploy the application to a Kubernetes cluster.
+* File: `.github/workflows/cd.yml`
+* Triggers: Merge to the main branch.
+*Steps:
+1. Build Docker images for backend and frontend.
+2. Push Docker images to Docker Hub.
+3. Deploy the application to a Kubernetes cluster.
 
 📷 Screenshots
-Example CI/CD Pipeline
+## Example CI/CD Pipeline
 
-Application Deployment in Kubernetes
+## Application Deployment in Kubernetes
 
-Add screenshots or diagrams that demonstrate your project's architecture and pipeline.
+_Add screenshots or diagrams that demonstrate your project's architecture and pipeline._
 
 ## 🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
-Fork this repository.
-Create a feature branch:
-bash
-Copy code
-git checkout -b feature-new-feature
-Commit your changes and submit a pull request.
+1. Fork this repository.
+2. Create a feature branch:
+`git checkout -b feature-new-feature`
+3. Commit your changes and submit a pull request.
+
 ##  📜 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-markdown
-Copy code
+`### **What You Need to Do**`
+`1. Replace placeholders like `your-username` and example links with actual details.`
+`2. Add diagrams or screenshots to the `docs/images/` directory and update the links in the "Screenshots" section.`
+`3. Ensure the folder structure and commands match your project setup.`
 
-### **What You Need to Do**
-1. Replace placeholders like `your-username` and example links with actual details.
-2. Add diagrams or screenshots to the `docs/images/` directory and update the links in the "Screenshots" section.
-3. Ensure the folder structure and commands match your project setup.
-
-This `README.md` is comprehensive and demonstrates your CI/CD project effective
+`This `README.md` is comprehensive and demonstrates your CI/CD project effective`

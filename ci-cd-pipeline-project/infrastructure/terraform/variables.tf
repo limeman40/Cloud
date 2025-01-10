@@ -19,7 +19,7 @@ variable "replicas" {
 variable "container_image" {
   description = "The Docker image for the application."
   type        = string
-  default     = "<your-docker-image>:latest"
+  default     = "ubuntu:latest"
 }
 
 variable "container_port" {

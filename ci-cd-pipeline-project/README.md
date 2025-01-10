@@ -5,15 +5,22 @@ This project demonstrates a fully automated CI/CD pipeline for a containerized a
 ---
 
 ## 📋 Table of Contents
-- [Overview](#overview)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Folder Structure](#folder-structure)
-- [Setup and Usage](#setup-and-usage)
-- [Workflows](#workflows)
-- [Screenshots](#screenshots)
-- [Contributing](#contributing)
-- [License](#license)
+- [🚀 CI/CD Pipeline Project](#-cicd-pipeline-project)
+  - [📋 Table of Contents](#-table-of-contents)
+  - [📖 Overview](#-overview)
+  - [✨ Features](#-features)
+  - [🛠️ Technologies Used](#️-technologies-used)
+  - [📁 Folder Structure](#-folder-structure)
+  - [⚙️ Setup and Usage](#️-setup-and-usage)
+- [1. Clone the Repository](#1-clone-the-repository)
+- [2. Set Up Environment Variables](#2-set-up-environment-variables)
+- [3. Run Locally with Docker Compose](#3-run-locally-with-docker-compose)
+- [4. Run Tests](#4-run-tests)
+- [5. Deploy to Kubernetes](#5-deploy-to-kubernetes)
+  - [Verify the deployment:](#verify-the-deployment)
+  - [🔄 Workflows](#-workflows)
+  - [🤝 Contributing](#-contributing)
+  - [📜 License](#-license)
 
 ---
 
@@ -121,43 +128,40 @@ Ensure you have a Kubernetes cluster and kubectl configured. Then, apply the Kub
 
 `kubectl apply -f infrastructure/k8s/`
 
-Verify the deployment:
+## Verify the deployment:
 
-bash
-Copy code
+```
 kubectl get pods
 kubectl get services
-6. Monitor Logs and Status
+```
+1. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.
 For Kubernetes logs:
-bash
-Copy code
-kubectl logs <pod-name>
-For Docker logs (local testing):
-bash
-Copy code
-docker-compose logs
-7. Stop Local Containers
-To stop and clean up the Docker containers running locally:
 
-bash
-Copy code
-docker-compose down
+`kubectl logs <pod-name>`
+For Docker logs (local testing):
+
+docker-compose logs
+1. Stop Local Containers
+2. To stop and clean up the Docker containers running locally:
+
+`docker-compose down`
 ## 🔄 Workflows
 1. Continuous Integration (CI)
-File: .github/workflows/ci.yml
+`File: .github/workflows/ci.yml`
 Triggers: Every push or pull request.
-Steps:
-Check out the repository.
-Run backend and frontend tests.
-Perform linting for code quality.
+* Steps:
+* Check out the repository.
+*Run backend and frontend tests.
+* Perform linting for code quality.
+
 2. Continuous Deployment (CD)
-File: .github/workflows/cd.yml
-Triggers: Merge to the main branch.
-Steps:
-Build Docker images for backend and frontend.
-Push Docker images to Docker Hub.
-Deploy the application to a Kubernetes cluster.
+`File: .github/workflows/cd.yml`
+* Triggers: Merge to the main branch.
+* Steps:
+1. Build Docker images for backend and frontend.
+2. Push Docker images to Docker Hub.
+3. Deploy the application to a Kubernetes cluster.
 📷 Screenshots
 Example CI/CD Pipeline
 
@@ -168,21 +172,12 @@ Add screenshots or diagrams that demonstrate your project's architecture and pip
 ## 🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
-Fork this repository.
-Create a feature branch:
-bash
-Copy code
+1. Fork this repository.
+2. Create a feature branch:
+```
 git checkout -b feature-new-feature
 Commit your changes and submit a pull request.
+```
+
 ##  📜 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
-
-markdown
-Copy code
-
-### **What You Need to Do**
-1. Replace placeholders like `your-username` and example links with actual details.
-2. Add diagrams or screenshots to the `docs/images/` directory and update the links in the "Screenshots" section.
-3. Ensure the folder structure and commands match your project setup.
-
-This `README.md` is comprehensive and demonstrates your CI/CD project effective

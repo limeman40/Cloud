@@ -141,7 +141,7 @@ To stop and clean up the Docker containers running locally:
 
 ## 🔄 Workflows
 # 1. Continuous Integration (CI)
-* File: .github/workflows/ci.yml
+* File: `.github/workflows/ci.yml`
 * Triggers: Every push or pull request.
 * Steps:
 1. Check out the repository.

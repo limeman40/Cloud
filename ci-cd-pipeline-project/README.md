@@ -124,7 +124,7 @@ Verify the deployment:
 `kubectl get pods`
 `kubectl get services`
 
-#6. Monitor Logs and Status
+# 6. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.
 
 For Kubernetes logs:

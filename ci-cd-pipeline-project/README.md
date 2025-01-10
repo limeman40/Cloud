@@ -85,45 +85,42 @@ ci-cd-pipeline-project/
 # 1. Clone the Repository
 Clone the repository to your local machine:
 
-`git clone https://github.com/your-username/ci-cd-pipeline-project.git
-cd ci-cd-pipeline-project`
+`git clone https://github.com/your-username/ci-cd-pipeline-project.git`
+`cd ci-cd-pipeline-project`
 
 # 2. Set Up Environment Variables
 Create a .env file in the config/ directory and add the required environment variables. Example:
 
-plaintext
-Copy code
+```plaintext
 DOCKER_USERNAME=your-dockerhub-username
 DOCKER_PASSWORD=your-dockerhub-password
+```
 # 3. Run Locally with Docker Compose
 To test the application locally using Docker Compose:
 
 Build and run the containers:
-bash
-Copy code
-docker-compose up --build
+
+`Copy code`
+`docker-compose up --build`
+
 Access the application:
-Frontend: http://localhost:3000
-Backend: http://localhost:5000
+* Frontend: http://localhost:3000
+* Backend: http://localhost:5000
+* 
 # 4. Run Tests
 Use the following commands to run tests for the application:
 
-Backend Tests:
+* Backend Tests:
+`pytest tests/test_app.py`
 
-bash
-Copy code
-pytest tests/test_app.py
-Frontend Tests:
+* Frontend Tests:
+`npm test tests/testui.js`
 
-bash
-Copy code
-npm test tests/testui.js
-5. Deploy to Kubernetes
+# 5. Deploy to Kubernetes
 Ensure you have a Kubernetes cluster and kubectl configured. Then, apply the Kubernetes manifests in the infrastructure/k8s/ directory:
 
-bash
-Copy code
-kubectl apply -f infrastructure/k8s/
+`kubectl apply -f infrastructure/k8s/`
+
 Verify the deployment:
 
 bash

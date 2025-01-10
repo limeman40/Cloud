@@ -13,7 +13,7 @@ This repository showcases a collection of sample projects demonstrating DevOps p
      - Supports containerized applications (Docker).
      - Integrates with Kubernetes for deployments.
    - **Technologies:** GitHub Actions, Docker, Kubernetes.
-   - **Repository:** [View Project](https://github.com/limeman40/devops-sample-projects/blob/develop/ci-cd-pipeline-project/README.md](https://github.com/limeman40/devops-sample-projects/tree/develop/ci-cd-pipeline-project)
+   - **Repository:** [View Project](https://github.com/limeman40/devops-sample-projects/tree/develop/ci-cd-pipeline-project)
 
 ---
 

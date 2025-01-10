@@ -85,8 +85,8 @@ ci-cd-pipeline-project/
 # 1. Clone the Repository
 Clone the repository to your local machine:
 
-```git clone https://github.com/your-username/ci-cd-pipeline-project.git
-cd ci-cd-pipeline-project```
+``` git clone https://github.com/your-username/ci-cd-pipeline-project.git
+cd ci-cd-pipeline-project ``` 
 
 # 2. Set Up Environment Variables
 Create a .env file in the config/ directory and add the required environment variables. Example:

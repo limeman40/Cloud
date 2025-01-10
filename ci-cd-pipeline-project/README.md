@@ -129,35 +129,40 @@ kubectl get pods
 kubectl get services
 6. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.
+
 For Kubernetes logs:
-bash
-Copy code
-kubectl logs <pod-name>
+`kubectl logs <pod-name>`
+
 For Docker logs (local testing):
-bash
-Copy code
-docker-compose logs
+`docker-compose logs`
+
 7. Stop Local Containers
 To stop and clean up the Docker containers running locally:
 
-bash
-Copy code
-docker-compose down
+`docker-compose down`
+
 ## 🔄 Workflows
 1. Continuous Integration (CI)
 File: .github/workflows/ci.yml
+
 Triggers: Every push or pull request.
+
 Steps:
 Check out the repository.
 Run backend and frontend tests.
+
 Perform linting for code quality.
-2. Continuous Deployment (CD)
+# 2. Continuous Deployment (CD)
+
 File: .github/workflows/cd.yml
 Triggers: Merge to the main branch.
+
 Steps:
 Build Docker images for backend and frontend.
 Push Docker images to Docker Hub.
+
 Deploy the application to a Kubernetes cluster.
+
 📷 Screenshots
 Example CI/CD Pipeline
 

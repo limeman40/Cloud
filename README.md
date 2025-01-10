@@ -24,7 +24,7 @@ This repository showcases a collection of sample projects demonstrating DevOps p
      - Multi-environment support (Dev, Staging, Prod).
      - Uses a remote backend for state management.
    - **Technologies:** Terraform, AWS.
-   - **Repository:** [View Project](https://github.com/limeman40/devops-sample-projects/tree/develop/ci-cd-pipeline-project)
+   - **Repository:** [ci-cd-pipeline-project](https://github.com/limeman40/devops-sample-projects/tree/develop/ci-cd-pipeline-project/](https://github.com/limeman40/devops-sample-projects/blob/develop/ci-cd-pipeline-project/README.md)
 
 ---
 

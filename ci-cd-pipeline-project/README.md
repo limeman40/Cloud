@@ -172,9 +172,10 @@ Contributions are welcome! Please follow these steps:
 ##  📜 License
 This project is licensed under the MIT License. See the LICENSE file for more details.
 
-`### **What You Need to Do**`
-`1. Replace placeholders like `your-username` and example links with actual details.`
-`2. Add diagrams or screenshots to the `docs/images/` directory and update the links in the "Screenshots" section.`
-`3. Ensure the folder structure and commands match your project setup.`
+```### **What You Need to Do**
+1. Replace placeholders like `your-username` and example links with actual details.
+2. Add diagrams or screenshots to the `docs/images/` directory and update the links in the "Screenshots" section.
+3. Ensure the folder structure and commands match your project setup.
 
-`This `README.md` is comprehensive and demonstrates your CI/CD project effective`
+This `README.md` is comprehensive and demonstrates your CI/CD project effective
+```

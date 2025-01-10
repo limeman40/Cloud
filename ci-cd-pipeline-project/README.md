@@ -121,8 +121,10 @@ Ensure you have a Kubernetes cluster and kubectl configured. Then, apply the Kub
 `kubectl apply -f infrastructure/k8s/`
 
 Verify the deployment:
-`kubectl get pods`
-`kubectl get services`
+```
+kubectl get pods
+kubectl get services
+```
 
 # 6. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.

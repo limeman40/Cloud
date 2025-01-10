@@ -5,8 +5,8 @@ set -e
 
 # Define variables
 NAMESPACE="ci-cd-namespace"
-DEPLOYMENT_FILE="deployment.yml"
-SERVICE_FILE="service.yml"
+DEPLOYMENT_FILE="infrastructure/k8s/deployment.yml"
+SERVICE_FILE="infrastructure/k8s/service.yml"
 
 # Step 1: Create namespace if it doesn't exist
 echo "Ensuring namespace exists..."

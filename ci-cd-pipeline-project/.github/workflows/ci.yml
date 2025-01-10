@@ -34,5 +34,5 @@ jobs:
         uses: akhileshns/heroku-deploy@v4.2.8
         with:
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: "your-heroku-app"
+          heroku_app_name: "ci-cd-app"
           heroku_email: "nicholas.clark@outlook.com"

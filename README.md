@@ -75,7 +75,8 @@ This repository showcases a collection of sample projects demonstrating DevOps p
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/devops-sample-projects.git
+
+   git clone https://github.com/limeman40/devops-sample-projects.git
    cd devops-sample-projects
 
 📧 Contact

@@ -1,0 +1,39 @@
+# Byte-compiled Python files
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+
+# Logs
+*.log
+
+# Unit test and coverage results
+*.out
+*.xml
+coverage/
+htmlcov/
+
+# Environment files
+.env
+
+# Docker specific files
+Dockerfile
+.dockerignore
+
+# Node modules (if applicable)
+node_modules/
+
+# Python egg files
+*.egg
+*.egg-info/
+
+dist/
+build/
+*.egg-info
+
+# Git specific files
+.idea/
+.vscode/
+*.swp

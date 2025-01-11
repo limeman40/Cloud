@@ -17,13 +17,13 @@ This repository showcases a collection of sample projects demonstrating DevOps p
 
 ---
 
-### 2. **Infrastructure as Code with Terraform**
-   - **Description:** Automates the provisioning of cloud infrastructure on AWS using Terraform.
+### 2. **Kubernetes Monitoring and Alerting**
+   - **Description:** Set up monitoring for a Kubernetes cluster using Prometheus, Grafana, and Alertmanager.
    - **Key Features:**
-     - Creates scalable AWS resources (EC2, S3, RDS).
-     - Multi-environment support (Dev, Staging, Prod).
-     - Uses a remote backend for state management.
-   - **Technologies:** Terraform, AWS.
+     - Monitor cluster metrics like CPU, memory, and pod usage.
+     - Create visual dashboards in Grafana.
+     - Configure alerts for resource limits.
+   - **Technologies:** Prometheus, Grafana, and Alertmanager.
    - **Repository:** [View Project](#)
 
 ---

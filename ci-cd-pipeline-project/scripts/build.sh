@@ -6,7 +6,7 @@ set -e
 # Define variables
 IMAGE_NAME="ci-cd-app"
 IMAGE_TAG="latest"
-REGISTRY="nicholasclark"
+REGISTRY="<PutYourRegistryNameHere"
 
 # Step 1: Run tests
 echo "Running tests..."

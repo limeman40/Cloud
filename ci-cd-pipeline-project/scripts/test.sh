@@ -3,20 +3,25 @@
 # Exit immediately if a command exits with a non-zero status
 set -e
 
-# Step 1: Run unit tests with pytest
-echo "Running unit tests..."
-pytest --maxfail=5 --disable-warnings
+# Define the test directory
+TEST_DIR="../tests"
 
-# Step 2: Check code formatting with black
-echo "Checking code formatting with Black..."
-black --check .
+echo "Running all unit tests in the '${TEST_DIR}' folder..."
 
-# Step 3: Run static code analysis with pylint
-echo "Running static code analysis with Pylint..."
-pylint $(find . -name "*.py" | tr '\n' ' ')
+# Check if the tests folder exists
+if [ ! -d "$TEST_DIR" ]; then
+  echo "Error: '${TEST_DIR}' directory does not exist."
+  exit 1
+fi
 
-# Step 4: Run security checks with bandit
-echo "Running security checks with Bandit..."
-bandit -r .
+# Run the tests using a testing framework (e.g., Jest, Pytest, Mocha, etc.)
+# Replace 'npm test' with your specific test command
+npm test "$TEST_DIR" --passWithNoTests
 
-echo "All tests and checks passed successfully."
+# Check the status of the tests
+if [ $? -eq 0 ]; then
+  echo "All tests passed successfully!"
+else
+  echo "Some tests failed. Check the logs above for more details."
+  exit 1
+fi

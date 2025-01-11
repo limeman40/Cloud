@@ -61,13 +61,12 @@ ci-cd-pipeline-project/
 │       ├── Dockerfile
 │       ├── package.json
 │       └── index.html
-├── tests/units/                 # Test scripts
-│   ├── integration/             # EndPoints Test
+├── tests                        # Test scripts
+│   ├── backend/                 # EndPoints Test
 │   │   ├── testEndPoints.js     # UI Test
 │   ├── frontend/                # Frontend test
-│       ├── testUI.js            # UI Test
-│   ├── unit/                    # Backend test
-│       ├── testApp.js           # App test
+│       ├── frontend.js          # UI Test
+|       ├── frontend.test.js     # UI Test
 ├── .github/workflows/           # CI/CD workflows
 │   ├── ci.yml                   # Continuous Integration
 │   └── cd.yml                   # Continuous Deployment
@@ -133,13 +132,13 @@ kubectl get services
 # 6. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.
 
-For Kubernetes logs:
+* For Kubernetes logs:
 `kubectl logs <pod-name>`
 
-For Docker logs (local testing):
+* For Docker logs (local testing):
 `docker-compose logs`
 
-7. Stop Local Containers
+# 7. Stop Local Containers
 To stop and clean up the Docker containers running locally:
 `docker-compose down`
 
@@ -153,10 +152,9 @@ To stop and clean up the Docker containers running locally:
 3. Perform linting for code quality.
 
 # 2. Continuous Deployment (CD)
-
 * File: `.github/workflows/cd.yml`
 * Triggers: Merge to the main branch.
-*Steps:
+* Steps:
 1. Build Docker images for backend and frontend.
 2. Push Docker images to Docker Hub.
 3. Deploy the application to a Kubernetes cluster.
@@ -177,12 +175,4 @@ Contributions are welcome! Please follow these steps:
 3. Commit your changes and submit a pull request.
 
 ##  📜 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
-
-```### **What You Need to Do**
-1. Replace placeholders like `your-username` and example links with actual details.
-2. Add diagrams or screenshots to the `docs/images/` directory and update the links in the "Screenshots" section.
-3. Ensure the folder structure and commands match your project setup.
-
-This `README.md` is comprehensive and demonstrates your CI/CD project effective
-```
+This project is licensed under the MIT License. See the LICENSE file for more details.~~~~

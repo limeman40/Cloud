@@ -6,7 +6,7 @@ set -e
 # Define variables
 IMAGE_NAME="ci-cd-app"
 IMAGE_TAG="latest"
-REGISTRY="nicholasclark"
+REGISTRY="<PutYourRegistryNameHere"
 
 # Step 1: Run tests
 echo "Running tests..."
@@ -26,7 +26,7 @@ docker push $REGISTRY/$IMAGE_NAME:$IMAGE_TAG
 
 # Step 5: Deploy to Kubernetes
 echo "Deploying to Kubernetes..."
-kubectl apply -f infrastructure/k8s/deployment.yml
-kubectl apply -f infrastructure/k8s/service.yml
+kubectl apply -f ../infrastructure/k8s/deployment.yml
+kubectl apply -f ../infrastructure/k8s/service.yml
 
 echo "Build and deployment complete."

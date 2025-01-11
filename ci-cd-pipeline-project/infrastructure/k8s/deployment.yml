@@ -1,36 +1,29 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ci-cd-app
+  name: jenkins
   labels:
-    app: ci-cd-app
+    app: jenkins
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
-      app: ci-cd-app
+      app: jenkins
   template:
     metadata:
       labels:
-        app: ci-cd-app
+        app: jenkins
     spec:
       containers:
-      - name: ci-cd-app-container
-        image: ubuntu:latest
+      - name: jenkins
+        image: jenkins/jenkins:lts
         ports:
-        - containerPort: 5000
-        env:
-        - name: FLASK_ENV
-          value: "production"
-        readinessProbe:
-          httpGet:
-            path: "/health"
-            port: 5000
-          initialDelaySeconds: 5
-          periodSeconds: 10
-        livenessProbe:
-          httpGet:
-            path: "/health"
-            port: 5000
-          initialDelaySeconds: 15
-          periodSeconds: 20
+        - containerPort: 8080
+        - containerPort: 50000
+        volumeMounts:
+        - name: jenkins-data
+          mountPath: /var/jenkins_home
+      volumes:
+      - name: jenkins-data
+        persistentVolumeClaim:
+          claimName: jenkins-pvc

@@ -1,0 +1,29 @@
+{
+    "name": "ci-cd-project",
+    "version": "1.0.0",
+    "description": "A CI/CD project with unit testing using Jest.",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "test": "jest",
+      "build": "echo 'Build step placeholder'",
+      "lint": "eslint .",
+      "ci": "npm run lint && npm run test && npm run build"
+    },
+    "keywords": [
+      "ci",
+      "cd",
+      "testing",
+      "kubernetes"
+    ],
+    "author": "Your Name",
+    "license": "MIT",
+    "dependencies": {
+      "express": "^4.18.2"
+    },
+    "devDependencies": {
+      "jest": "^29.0.0",
+      "eslint": "^8.0.0"
+    }
+  }
+  

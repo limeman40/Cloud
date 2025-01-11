@@ -28,13 +28,12 @@ This repository showcases a collection of sample projects demonstrating DevOps p
 
 ---
 
-### 3. **Kubernetes Deployment with Helm**
-   - **Description:** Deploys a containerized microservices application using Kubernetes and Helm.
+### 3. **Kubernetes Autoscaling**
+   - **Description:** Implement Horizontal Pod Autoscaling (HPA) and Vertical Pod Autoscaling (VPA) for applications.
    - **Key Features:**
-     - Helm charts for reusable Kubernetes configurations.
-     - Configures Ingress, Secrets, and ConfigMaps.
-     - Autoscaling and load balancing.
-   - **Technologies:** Kubernetes, Helm, Docker.
+     - Autoscale pods based on CPU or memory usage.
+     - Test the autoscaling behavior by simulating load..
+   - **Technologies:** Kubernetes, Autoscaling.
    - **Repository:** [View Project](#)
 
 ---
@@ -50,13 +49,13 @@ This repository showcases a collection of sample projects demonstrating DevOps p
 
 ---
 
-### 5. **Cloud Automation with AWS CDK**
-   - **Description:** Automates serverless application deployment using AWS CDK.
+### 5. **Multi-Tier Application Deployment**
+   - **Description:** Deploy a multi-tier application (e.g., frontend, backend, and database) on Kubernetes..
    - **Key Features:**
-     - Lambda functions for backend processing.
-     - API Gateway for RESTful endpoints.
-     - DynamoDB for data storage.
-   - **Technologies:** AWS CDK, Python.
+     - Use separate Kubernetes Deployments for each tier.
+     - Expose the frontend through an Ingress or LoadBalancer.
+     - Use PersistentVolume for the database.
+   - **Technologies:** Frontend, Backend, Database.
    - **Repository:** [View Project](#)
 
 ---

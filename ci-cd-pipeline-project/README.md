@@ -61,13 +61,12 @@ ci-cd-pipeline-project/
 │       ├── Dockerfile
 │       ├── package.json
 │       └── index.html
-├── tests/units/                 # Test scripts
-│   ├── integration/             # EndPoints Test
+├── tests                        # Test scripts
+│   ├── backend/                 # EndPoints Test
 │   │   ├── testEndPoints.js     # UI Test
 │   ├── frontend/                # Frontend test
-│       ├── testUI.js            # UI Test
-│   ├── unit/                    # Backend test
-│       ├── testApp.js           # App test
+│       ├── frontend.js          # UI Test
+|       ├── frontend.test.js     # UI Test
 ├── .github/workflows/           # CI/CD workflows
 │   ├── ci.yml                   # Continuous Integration
 │   └── cd.yml                   # Continuous Deployment

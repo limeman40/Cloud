@@ -5,22 +5,15 @@ This project demonstrates a fully automated CI/CD pipeline for a containerized a
 ---
 
 ## 📋 Table of Contents
-- [🚀 CI/CD Pipeline Project](#-cicd-pipeline-project)
-  - [📋 Table of Contents](#-table-of-contents)
-  - [📖 Overview](#-overview)
-  - [✨ Features](#-features)
-  - [🛠️ Technologies Used](#️-technologies-used)
-  - [📁 Folder Structure](#-folder-structure)
-  - [⚙️ Setup and Usage](#️-setup-and-usage)
-- [1. Clone the Repository](#1-clone-the-repository)
-- [2. Set Up Environment Variables](#2-set-up-environment-variables)
-- [3. Run Locally with Docker Compose](#3-run-locally-with-docker-compose)
-- [4. Run Tests](#4-run-tests)
-- [5. Deploy to Kubernetes](#5-deploy-to-kubernetes)
-  - [Verify the deployment:](#verify-the-deployment)
-  - [🔄 Workflows](#-workflows)
-  - [🤝 Contributing](#-contributing)
-  - [📜 License](#-license)
+- [Overview](#overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+- [Folder Structure](#folder-structure)
+- [Setup and Usage](#setup-and-usage)
+- [Workflows](#workflows)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [License](#license)
 
 ---
 
@@ -68,9 +61,13 @@ ci-cd-pipeline-project/
 │       ├── Dockerfile
 │       ├── package.json
 │       └── index.html
-├── tests/                       # Test scripts
-│   ├── test_app.py              # Backend tests
-│   └── testui.js                # Frontend UI tests
+├── tests/units/                 # Test scripts
+│   ├── integration/             # EndPoints Test
+│   │   ├── testEndPoints.js     # UI Test
+│   ├── frontend/                # Frontend test
+│       ├── testUI.js            # UI Test
+│   ├── unit/                    # Backend test
+│       ├── testApp.js           # App test
 ├── .github/workflows/           # CI/CD workflows
 │   ├── ci.yml                   # Continuous Integration
 │   └── cd.yml                   # Continuous Deployment
@@ -92,8 +89,10 @@ ci-cd-pipeline-project/
 # 1. Clone the Repository
 Clone the repository to your local machine:
 
-`git clone https://github.com/your-username/ci-cd-pipeline-project.git`
-`cd ci-cd-pipeline-project`
+```
+git clone https://github.com/your-username/ci-cd-pipeline-project.git
+cd ci-cd-pipeline-project
+```
 
 # 2. Set Up Environment Variables
 Create a .env file in the config/ directory and add the required environment variables. Example:
@@ -107,7 +106,6 @@ To test the application locally using Docker Compose:
 
 Build and run the containers:
 
-`Copy code`
 `docker-compose up --build`
 
 Access the application:
@@ -119,65 +117,63 @@ Use the following commands to run tests for the application:
 
 * Backend Tests:
 `pytest tests/test_app.py`
-
 * Frontend Tests:
 `npm test tests/testui.js`
 
 # 5. Deploy to Kubernetes
 Ensure you have a Kubernetes cluster and kubectl configured. Then, apply the Kubernetes manifests in the infrastructure/k8s/ directory:
-
 `kubectl apply -f infrastructure/k8s/`
 
-## Verify the deployment:
-
+Verify the deployment:
 ```
 kubectl get pods
 kubectl get services
 ```
-1. Monitor Logs and Status
+
+# 6. Monitor Logs and Status
 View the pipeline status in the Actions tab of the GitHub repository.
-For Kubernetes logs:
 
+* For Kubernetes logs:
 `kubectl logs <pod-name>`
-For Docker logs (local testing):
 
-docker-compose logs
-1. Stop Local Containers
-2. To stop and clean up the Docker containers running locally:
+* For Docker logs (local testing):
+`docker-compose logs`
 
+# 7. Stop Local Containers
+To stop and clean up the Docker containers running locally:
 `docker-compose down`
-## 🔄 Workflows
-1. Continuous Integration (CI)
-`File: .github/workflows/ci.yml`
-Triggers: Every push or pull request.
-* Steps:
-* Check out the repository.
-*Run backend and frontend tests.
-* Perform linting for code quality.
 
-2. Continuous Deployment (CD)
-`File: .github/workflows/cd.yml`
+## 🔄 Workflows
+# 1. Continuous Integration (CI)
+* File: `.github/workflows/ci.yml`
+* Triggers: Every push or pull request.
+* Steps:
+1. Check out the repository.
+2. Run backend and frontend tests.
+3. Perform linting for code quality.
+
+# 2. Continuous Deployment (CD)
+* File: `.github/workflows/cd.yml`
 * Triggers: Merge to the main branch.
 * Steps:
 1. Build Docker images for backend and frontend.
 2. Push Docker images to Docker Hub.
 3. Deploy the application to a Kubernetes cluster.
+
 📷 Screenshots
-Example CI/CD Pipeline
+## Example CI/CD Pipeline
 
-Application Deployment in Kubernetes
+## Application Deployment in Kubernetes
 
-Add screenshots or diagrams that demonstrate your project's architecture and pipeline.
+_Add screenshots or diagrams that demonstrate your project's architecture and pipeline._
 
 ## 🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
 1. Fork this repository.
 2. Create a feature branch:
-```
-git checkout -b feature-new-feature
-Commit your changes and submit a pull request.
-```
+`git checkout -b feature-new-feature`
+3. Commit your changes and submit a pull request.
 
 ##  📜 License
-This project is licensed under the MIT License. See the LICENSE file for more details.
+This project is licensed under the MIT License. See the LICENSE file for more details.~~~~

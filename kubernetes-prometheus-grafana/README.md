@@ -62,7 +62,7 @@ helm repo add grafana https://grafana.github.io/helm-charts
 kubectl get secret -n monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
 4. Access Grafana:
-- Port-forward to Grafana:
+Port-forward to Grafana:
 ```bash
 kubectl port-forward -n monitoring svc/grafana 3000:80
 ```
@@ -70,12 +70,12 @@ kubectl port-forward -n monitoring svc/grafana 3000:80
 - Username: `admin`
 - Password: Retrieved above.
 
-5. Add Prometheus as a data source:
+1. Add Prometheus as a data source:
 - Navigate to Grafana -> Configuration -> Data Sources -> Add.
 - Choose Prometheus and set the URL to:
 ` http://prometheus-server.monitoring.svc.cluster.local `
 
-6. Import predefined dashboards:
+1. Import predefined dashboards:
 - Use dashboard ID `6417` for Kubernetes Monitoring.
 
 ### **Step 3: Configure Alertmanager**

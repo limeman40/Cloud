@@ -46,7 +46,7 @@ This repository showcases a collection of sample projects demonstrating DevOps p
      - Expose the frontend through an Ingress or LoadBalancer.
      - Use PersistentVolume for the database.
    - **Technologies:** Frontend, Backend, Database.
-   - **Repository:** [View Project](#)
+   - **Repository:** [View Project](https://github.com/limeman40/devops-sample-projects/tree/develop/multi-tier-app-deployment)
 
 ---
 

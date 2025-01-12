@@ -1,0 +1,6 @@
+# Ignore Kubernetes configuration files
+*.kubeconfig
+*.log
+
+# Ignore temporary files
+*.tmp

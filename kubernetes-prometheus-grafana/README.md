@@ -48,7 +48,7 @@ kubectl port-forward -n monitoring deploy/prometheus-server 9090
 ### **Step 1: Install Prometheus**
 
 1. Add the Grafana Helm repository:
-``bash
+```bash
 helm repo add grafana https://grafana.github.io/helm-charts
 ```
 

@@ -1,4 +1,4 @@
-# Kubernetes Monitoring and Alerting
+# 🔔 Kubernetes Monitoring and Alerting
 
 This repository provides a complete guide and setup for monitoring and alerting in Kubernetes using **Prometheus**, **Grafana**, and **Alertmanager**. By following this project, you will gain practical experience in setting up metrics collection, visualization, and alerting in a Kubernetes cluster.
 

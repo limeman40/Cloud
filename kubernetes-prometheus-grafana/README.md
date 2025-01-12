@@ -27,44 +27,44 @@ This repository provides a complete guide and setup for monitoring and alerting 
 ### **Step 1: Install Prometheus**
 
 1. Add the Prometheus Helm repository:
-   ```bash
-      helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
-      helm repo update
-   ```
-2.  Install Prometheus using Helm:
-    ```bash
-       helm install prometheus prometheus-community/prometheus -n monitoring --create-namespace
-    ```
-3.  - Verify the installation:
-    ```bash
-       kubectl get pods -n monitoring
-    ```
-    - Port-forward the Prometheus server to access the UI:
-    ```bash
-       kubectl port-forward -n monitoring deploy/prometheus-server 9090
-    ```
-    - Access Prometheus at `http://localhost:9090`
+```bash
+helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
+helm repo update
+```
+2. Install Prometheus using Helm:
+```bash
+helm install prometheus prometheus-community/prometheus -n monitoring --create-namespace
+```
+3. - Verify the installation:
+```bash
+kubectl get pods -n monitoring
+```
+- Port-forward the Prometheus server to access the UI:
+```bash
+kubectl port-forward -n monitoring deploy/prometheus-server 9090
+```
+- Access Prometheus at `http://localhost:9090`
 
 ### **Step 1: Install Prometheus**
 
 1. Add the Grafana Helm repository:
 ``bash
-    helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add grafana https://grafana.github.io/helm-charts
 ```
 
 2. Install Grafana:
 ```bash
-    helm repo add grafana https://grafana.github.io/helm-charts
+helm repo add grafana https://grafana.github.io/helm-charts
 ```
 
 3. Retrieve the admin password:
 ```bash
-    kubectl get secret -n monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode
+kubectl get secret -n monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
 4. Access Grafana:
--Port-forward to Grafana:
+- Port-forward to Grafana:
 ```bash
-    kubectl port-forward -n monitoring svc/grafana 3000:80
+kubectl port-forward -n monitoring svc/grafana 3000:80
 ```
 - Visit `http://localhost:3000` and log in with:
 - Username: `admin`
@@ -80,13 +80,13 @@ This repository provides a complete guide and setup for monitoring and alerting 
 
 ### **Step 3: Configure Alertmanager**
 
-1.  Port-forward Alertmanager:
+1. Port-forward Alertmanager:
 ```bash
 kubectl port-forward -n monitoring deploy/prometheus-alertmanager 9093
 ```
 Visit `http://localhost:9093.`
 
-2.  Create an alert rule: Create a `ConfigMap` for alert rules:
+2. Create an alert rule: Create a `ConfigMap` for alert rules:
 
 ```yaml
 apiVersion: v1
@@ -135,7 +135,7 @@ alerting:
 3. Verify notifications sent by Alertmanager (e.g., email, Slack).
 4. View cluster metrics in Grafana dashboards.
 
-##Optional Enhancements
+## Optional Enhancements
 - Service Mesh Metrics: Integrate Prometheus with Istio or Linkerd for advanced monitoring.
 - Log Monitoring: Add Loki and integrate it with Grafana for centralized logging.
 - Persistence: Use PersistentVolumeClaims to ensure Prometheus and Grafana data persistence.

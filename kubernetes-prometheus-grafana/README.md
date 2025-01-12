@@ -35,7 +35,7 @@ helm repo update
 ```bash
 helm install prometheus prometheus-community/prometheus -n monitoring --create-namespace
 ```
-3. - Verify the installation:
+3. Verify the installation:
 ```bash
 kubectl get pods -n monitoring
 ```

@@ -34,7 +34,7 @@ This repository showcases a collection of sample projects demonstrating DevOps p
      - Autoscale pods based on CPU or memory usage.
      - Test the autoscaling behavior by simulating load..
    - **Technologies:** Kubernetes, Autoscaling.
-   - **Repository:** [View Project](#)
+   - **Repository:** [View Project](https://github.com/limeman40/devops-sample-projects/tree/develop/kubernetes-autoscaling)
 
 ---
 

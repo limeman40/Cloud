@@ -1,4 +1,4 @@
-# Kubernetes Autoscaling Project
+# 📈 Kubernetes Autoscaling Project
 
 This project demonstrates Kubernetes autoscaling using Horizontal Pod Autoscaler (HPA). The HPA automatically adjusts the number of pods in a deployment based on CPU or memory utilization.
 

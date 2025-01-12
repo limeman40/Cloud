@@ -38,18 +38,8 @@ This repository showcases a collection of sample projects demonstrating DevOps p
 
 ---
 
-### 4. **Monitoring and Logging with Prometheus and Grafana**
-   - **Description:** Implements monitoring and logging for cloud-native applications.
-   - **Key Features:**
-     - Monitors metrics like CPU, memory, and request rates.
-     - Dashboards with Grafana for visual insights.
-     - Centralized logging using Loki.
-   - **Technologies:** Prometheus, Grafana, Loki.
-   - **Repository:** [View Project](#)
 
----
-
-### 5. **Multi-Tier Application Deployment**
+### 4. **Multi-Tier Application Deployment**
    - **Description:** Deploy a multi-tier application (e.g., frontend, backend, and database) on Kubernetes..
    - **Key Features:**
      - Use separate Kubernetes Deployments for each tier.

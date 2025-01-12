@@ -24,7 +24,7 @@ This repository showcases a collection of sample projects demonstrating DevOps p
      - Create visual dashboards in Grafana.
      - Configure alerts for resource limits.
    - **Technologies:** Prometheus, Grafana, and Alertmanager.
-   - **Repository:** [View Project](#)
+   - **Repository:** [View Project]([https://github.com/limeman40/devops-sample-projects/tree/develop/ci-cd-pipeline-project](https://github.com/limeman40/devops-sample-projects/tree/develop/kubernetes-prometheus-grafana))
 
 ---
 

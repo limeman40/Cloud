@@ -1,11 +1,64 @@
-# Custom values for Prometheus
+# Prometheus Helm Chart Values Configuration
+
+# Server Configuration
 server:
   persistentVolume:
     enabled: true
-    size: 10Gi
-    storageClass: standard
+    size: 20Gi
+    storageClass: standard  # Ensure this matches your storage class
+  service:
+    type: ClusterIP
+  serviceAccount:
+    create: true
+
+# Alertmanager Configuration
 alertmanager:
   persistentVolume:
     enabled: true
-    size: 2Gi
-    storageClass: standard
+    size: 5Gi
+    storageClass: standard  # Ensure this matches your storage class
+  config:
+    global:
+      resolve_timeout: 5m
+    route:
+      group_by: ['job']
+      group_wait: 30s
+      group_interval: 5m
+      repeat_interval: 12h
+      receiver: 'default'
+    receivers:
+    - name: 'default'
+      email_configs:
+      - to: 'nicholas.a.clark@outlook.com'
+        from: 'alertmanager@pop-os.loc'
+        smarthost: 'pop-os.loc:587'
+        auth_username: 'electronic@example.com'
+        auth_password: 'securepassword'
+
+# PushGateway Configuration
+pushgateway:
+  enabled: false
+
+# Node Exporter Configuration
+nodeExporter:
+  enabled: true
+
+# Kube State Metrics Configuration
+kubeStateMetrics:
+  enabled: true
+
+# Prometheus Rules
+prometheusRules:
+  enabled: true
+  additionalRuleFiles: []
+
+# Grafana Integration (optional, if Prometheus is used with Grafana)
+grafana:
+  enabled: false
+
+# Alertmanger configuration
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - alertmanager.monitoring.svc.cluster.local:9093

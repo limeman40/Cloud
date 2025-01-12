@@ -22,6 +22,27 @@ This repository provides a complete guide and setup for monitoring and alerting 
 
 ---
 
+## 📁 Folder Structure
+```plaintext
+kubernetes-prometheus-grafana/
+├── charts/
+│   ├── grafana-values.yaml         # Grafana application
+│   ├── prometheus-values.yaml      # Prometheus application
+├── docs                            # Documentation
+│   ├── resources.md                # Resources Documentation
+│   ├── setup-guild.md              # Setup Guide
+│   ├── troubleshooting.md          # Troubleshooting Guide
+├── logs/                           # Log files
+├── mainfests/                      # Jobs mainifests
+│   ├── mailServer.yml              # Setup Mail Server
+│   ├── prometheus-alert-rules.yml  # Prometheus Alert Rules
+├── scripts/                        # Automation scripts
+│   ├── portForward.sh              # Setup Port Forwarding
+│   ├── setupProject.sh             # Setup Project
+├── README.md                       # Project documentation
+└── LICENSE                         # License
+```
+
 📧 Contact
 For questions or feedback, feel free to reach out:
 

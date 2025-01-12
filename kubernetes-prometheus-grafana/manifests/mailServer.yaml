@@ -1,0 +1,104 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mail-server
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mail-pvc
+  namespace: mail-server
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+      requests:
+        storage: 5Gi
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: smtp-auth
+  namespace: mail-server
+type: Opaque
+data:
+  username: c210bGVjdHJvbmljQGV4YW1wbGUuY29t  # base64 encoded username (e.g., "electronic@example.com")
+  password: c2VjdXJlcGFzc3dvcmQ=             # base64 encoded password (e.g., "securepassword")
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mail-server
+  namespace: mail-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mail-server
+  template:
+    metadata:
+      labels:
+        app: mail-server
+    spec:
+      containers:
+        - name: postfix
+          image: boky/postfix
+          ports:
+            - containerPort: 25
+          volumeMounts:
+            - name: mail-storage
+              mountPath: /var/mail
+          env:
+            - name: HOSTNAME
+              value: "mail.example.com"
+            - name: SMTP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-auth
+                  key: username
+            - name: SMTP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: smtp-auth
+                  key: password
+        - name: dovecot
+          image: tvial/docker-mailserver:dovecot
+          ports:
+            - containerPort: 110
+            - containerPort: 143
+            - containerPort: 993
+          volumeMounts:
+            - name: mail-storage
+              mountPath: /var/mail
+      volumes:
+        - name: mail-storage
+          persistentVolumeClaim:
+            claimName: mail-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mail-service
+  namespace: mail-server
+spec:
+  selector:
+    app: mail-server
+  ports:
+    - name: smtp
+      protocol: TCP
+      port: 25
+      targetPort: 25
+    - name: pop3
+      protocol: TCP
+      port: 110
+      targetPort: 110
+    - name: imap
+      protocol: TCP
+      port: 143
+      targetPort: 143
+    - name: imaps
+      protocol: TCP
+      port: 993
+      targetPort: 993
+  type: ClusterIP

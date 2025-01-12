@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set the project root folder name
-PROJECT_NAME="kubernetes-prometheus-grafana"
+PROJECT_NAME="${1}"
 
 # Create the main project directory
 mkdir -p $PROJECT_NAME

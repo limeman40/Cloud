@@ -1,5 +1,0 @@
-# Custom values for Grafana
-persistence:
-  enabled: true
-  storageClassName: standard
-  size: 10Gi

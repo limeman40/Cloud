@@ -1,0 +1,11 @@
+# Custom values for Prometheus
+server:
+  persistentVolume:
+    enabled: true
+    size: 10Gi
+    storageClass: standard
+alertmanager:
+  persistentVolume:
+    enabled: true
+    size: 2Gi
+    storageClass: standard

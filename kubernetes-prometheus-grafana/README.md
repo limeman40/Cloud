@@ -35,15 +35,15 @@ This repository provides a complete guide and setup for monitoring and alerting 
     ```bash
        helm install prometheus prometheus-community/prometheus -n monitoring --create-namespace
     ```
-3.  * Verify the installation:
+3.  - Verify the installation:
     ```bash
        kubectl get pods -n monitoring
     ```
-    * Port-forward the Prometheus server to access the UI:
+    - Port-forward the Prometheus server to access the UI:
     ```bash
        kubectl port-forward -n monitoring deploy/prometheus-server 9090
     ```
-    * Access Prometheus at `http://localhost:9090`
+    - Access Prometheus at `http://localhost:9090`
 
 ### **Step 1: Install Prometheus**
 
@@ -62,21 +62,21 @@ This repository provides a complete guide and setup for monitoring and alerting 
     kubectl get secret -n monitoring grafana -o jsonpath="{.data.admin-password}" | base64 --decode
 ```
 4. Access Grafana:
-* Port-forward to Grafana:
+-Port-forward to Grafana:
 ```bash
     kubectl port-forward -n monitoring svc/grafana 3000:80
 ```
-* Visit `http://localhost:3000` and log in with:
-* Username: `admin`
-* Password: Retrieved above.
+- Visit `http://localhost:3000` and log in with:
+- Username: `admin`
+- Password: Retrieved above.
 
 5. Add Prometheus as a data source:
-* Navigate to Grafana -> Configuration -> Data Sources -> Add.
-* Choose Prometheus and set the URL to:
+- Navigate to Grafana -> Configuration -> Data Sources -> Add.
+- Choose Prometheus and set the URL to:
 ` http://prometheus-server.monitoring.svc.cluster.local `
 
 6. Import predefined dashboards:
-* Use dashboard ID `6417` for Kubernetes Monitoring.
+- Use dashboard ID `6417` for Kubernetes Monitoring.
 
 ### **Step 3: Configure Alertmanager**
 
@@ -126,9 +126,9 @@ alerting:
 ```
 
 4. Configure notification channels:
-* Set up Slack, email, or other integrations in Alert manager's `config.yml`.
+- Set up Slack, email, or other integrations in Alert manager's `config.yml`.
 
-### **Step 4: Test the Setup** 
+### **Step 4: Test the Setup*-
 
 1. Simulate high CPU usage in a pod to trigger an alert.
 2. Check Prometheus for alert detection.
@@ -136,24 +136,24 @@ alerting:
 4. View cluster metrics in Grafana dashboards.
 
 ##Optional Enhancements
-* Service Mesh Metrics: Integrate Prometheus with Istio or Linkerd for advanced monitoring.
-* Log Monitoring: Add Loki and integrate it with Grafana for centralized logging.
-* Persistence: Use PersistentVolumeClaims to ensure Prometheus and Grafana data persistence.
+- Service Mesh Metrics: Integrate Prometheus with Istio or Linkerd for advanced monitoring.
+- Log Monitoring: Add Loki and integrate it with Grafana for centralized logging.
+- Persistence: Use PersistentVolumeClaims to ensure Prometheus and Grafana data persistence.
 
 ## Deliverables
-* A functional Kubernetes monitoring and alerting system.
-* Screenshots of custom Grafana dashboards.
-* Evidence of Alert manager notifications (e.g., email, Slack logs).
-* A write-up on challenges faced and solutions implemented.
+- A functional Kubernetes monitoring and alerting system.
+- Screenshots of custom Grafana dashboards.
+- Evidence of Alert manager notifications (e.g., email, Slack logs).
+- A write-up on challenges faced and solutions implemented.
 
 Resources
-* [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/)
-* [Grafana Documentation](https://grafana.com/docs/)
-* [Alert manager Documentation](https://prometheus.io/docs/alerting/latest/alertmanager/)
-* [Kubernetes Documentation](https://kubernetes.io/docs/home/)
+- [Prometheus Documentation](https://prometheus.io/docs/introduction/overview/)
+- [Grafana Documentation](https://grafana.com/docs/)
+- [Alert manager Documentation](https://prometheus.io/docs/alerting/latest/alertmanager/)
+- [Kubernetes Documentation](https://kubernetes.io/docs/home/)
 
 📧 Contact
 For questions or feedback, feel free to reach out:
 
-* Email: nicholas.a.clark@outlook.com
-* LinkedIn: [Nicholas Clark](https://www.linkedin.com/in/nicholas-a-clark/)
+- Email: nicholas.a.clark@outlook.com
+- LinkedIn: [Nicholas Clark](https://www.linkedin.com/in/nicholas-a-clark/)
